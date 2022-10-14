@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<title>Product</title>
+<h2>Product</h2>
+<a class="btn btn-success" href="/Product/CreateProducts">Add A Product</a>
+<td><a href="/Product/Cart" class="btn btn-info">Go Add To Cart Page</a></td>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Add To Cart</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@p.Qty</td>
+            <td><a href="/Product/EditProducts/@p.Id" class="btn btn-info">Edit</a></td>
+            <td><a href="/Product/DeleteProducts/@p.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="" class="btn btn-success">Add To Cart</a></td>
+        </tr>
+    }
+</table>
+
+
+
+
+
